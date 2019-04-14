@@ -74,4 +74,16 @@ Last login: Sun Apr 14 09:57:48 on tty1
 
 [root@localhost ~]#
 
+**Способ 3. rw init=/sysroot/bin/sh**
+В строке начинающейся с linux16 заменяем ro на rw init=/sysroot/bin/sh и нажимаем сtrl-xдля загрузки в систему. От прошлого примера отличается только тем, что файловая система сразу смонтирована в режим Read-Write:
+
+Entering emergency mode. Exit the shell to continue.
+
+Type "jornalctl" to view system logs.
+
+You might want to save "/run/initframfs/rdsosreport.txt" to USB stick or /boot after mounting them and attach it to a bug report.
+
+:/#
+
+
 
