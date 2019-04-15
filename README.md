@@ -107,15 +107,15 @@ Volume group "centos" successfully renamed to "OtusRoot"
 
 #
 
-# /etc/fstab
+#/etc/fstab
 
-# Created by anaconda on Sun Apr 14 03:46:55 2019
+#Created by anaconda on Sun Apr 14 03:46:55 2019
 
 #
 
-# Accessible filesystems, by reference, are maintained under '/dev/disk'
+#Accessible filesystems, by reference, are maintained under '/dev/disk'
 
-# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
 
 #
 
