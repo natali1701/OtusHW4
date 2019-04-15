@@ -1,0 +1,257 @@
+Script started on Mon 15 Apr 2019 11:02:23 AM EDT
+[root@localhost admin]# ls -a
+[0m[01;34m.[0m  [01;34m..[0m  .bash_logout  .bash_profile  .bashrc  typescript
+[root@localhost admin]# yum install rsync
+Loaded plugins: fastestmirror
+Determining fastest mirrors
+Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&arch=x86_64&repo=os&infra=stock error was
+14: curl#6 - "Could not resolve host: mirrorlist.centos.org; Unknown error"
+
+
+ One of the configured repositories failed (Unknown),
+ and yum doesn't have enough cached data to continue. At this point the only
+ safe thing yum can do is fail. There are a few ways to work "fix" this:
+
+     1. Contact the upstream for the repository and get them to fix the problem.
+
+     2. Reconfigure the baseurl/etc. for the repository, to point to a working
+        upstream. This is most often useful if you are using a newer
+        distribution release than is supported by the repository (and the
+        packages for the previous distribution release still work).
+
+     3. Run the command with the repository temporarily disabled
+            yum --disablerepo=<repoid> ...
+
+     4. Disable the repository permanently, so yum won't use it by default. Yum
+        will then just ignore the repository until you permanently enable it
+        again or use --enablerepo for temporary usage:
+
+            yum-config-manager --disable <repoid>
+        or
+            subscription-manager repos --disable=<repoid>
+
+     5. Configure the failing repository to be skipped, if it is unavailable.
+        Note that yum will try to contact the repo. when it runs most commands,
+        so will have to try and fail each time (and thus. yum will be be much
+        slower). If it is a very temporary problem though, this is often a nice
+        compromise:
+
+            yum-config-manager --save --setopt=<repoid>.skip_if_unavailable=true
+
+Cannot find a valid baseurl for repo: base/7/x86_64
+[root@localhost admin]# vu[Ki /etc/sysconfig/network-scripts/if[K[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P /etc/sysconfig/network-scripts/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc /etc/sysconfig/network-scripts/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd /etc/sysconfig/network-scripts/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[root@localhost network-scripts]# ls -a
+[0m[01;34m.[0m             [01;32mifdown-ippp[0m    [01;32mifdown-Team[0m      [01;32mifup-ippp[0m   [01;32mifup-routes[0m       network-functions
+[01;34m..[0m            [01;32mifdown-ipv6[0m    [01;32mifdown-TeamPort[0m  [01;32mifup-ipv6[0m   [01;32mifup-sit[0m          network-functions-ipv6
+ifcfg-enp0s3  [01;36mifdown-isdn[0m    [01;32mifdown-tunnel[0m    [01;36mifup-isdn[0m   [01;32mifup-Team[0m
+ifcfg-lo      [01;32mifdown-post[0m    [01;36mifup[0m             [01;32mifup-plip[0m   [01;32mifup-TeamPort[0m
+[01;36mifdown[0m        [01;32mifdown-ppp[0m     [01;32mifup-aliases[0m     [01;32mifup-plusb[0m  [01;32mifup-tunnel[0m
+[01;32mifdown-bnep[0m   [01;32mifdown-routes[0m  [01;32mifup-bnep[0m        [01;32mifup-post[0m   [01;32mifup-wireless[0m
+[01;32mifdown-eth[0m    [01;32mifdown-sit[0m     [01;32mifup-eth[0m         [01;32mifup-ppp[0m    [01;32minit.ipv6-global[0m
+[root@localhost network-scripts]# cd /home/admin/
+[root@localhost admin]# cd /home/admin/[10Pls -acd /etc/sysconfig/network-scripts/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pyum install rsynccd /etc/sysconfig/network-scripts/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P /etc/sysconfig/network-scripts/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cv /etc/sysconfig/network-scripts/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci /etc/sysconfig/network-scripts/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cifcfg-enp0s3
+[1;37r[?25h[?8c[?25h[?0c[27m[24m[0m[H[J[?25l[?1c[37;1H"/etc/sysconfig/network-scripts/ifcfg-enp0s3" 15L, 281C[1;1HTYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=dhcp
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=enp0s3
+UUID=9f38e076-c879-45ba-818a-5dbbd333702f
+DEVICE=enp0s3
+ONBOOT=no
+[1m[34m~                                                                                                   [17;1H~                                                                                                   [18;1H~                                                                                                   [19;1H~                                                                                                   [20;1H~                                                                                                   [21;1H~                                                                                                   [22;1H~                                                                                                   [23;1H~                                                                                                   [24;1H~                                                                                                   [25;1H~                                                                                                   [26;1H~                                                                                                   [27;1H~                                                                                                   [28;1H~                                                                                                   [29;1H~                                                                                                   [30;1H~                                                                                                   [31;1H~                                                                                                   [32;1H~                                                                                                   [33;1H~                                                                                                   [34;1H~                                                                                                   [35;1H~                                                                                                   [36;1H~                                                                                                   [1;1H[?25h[?0c[?25l[?1c[0m[37;1H[1m-- INSERT --[0m[37;13H[K[1;1H[?25h[?0c
+
+
+
+
+[5;1H[4;1H[3;1H
+
+[4;1H[3;1H[15C[?25l[?1c[4;36r[4;1H[L[1;37r[4;1H[?25h[?0c[?25l[?1cO[?25h[?0c[?25l[?1cN[?25h[?0c[?25l[?1cB[?25h[?0c[?25l[?1cO[?25h[?0c[?25l[?1cO[?25h[?0c[?25l[?1cT[?25h[?0c[?25l[?1c=[?25h[?0c[?25l[?1cn[?25h[?0c[?25l[?1co[?25h[?0c[?25l[?1c[5;36r[5;1H[L[1;37r[5;1H[?25h[?0c[?25l[?1cN[?25h[?0c[?25l[?1cm[?25h[?0c[?25l[?1c[5;2H[K[5;2H[?25h[?0c[?25l[?1cM[?25h[?0c[?25l[?1c_[?25h[?0c[?25l[?1cC[?25h[?0c[?25l[?1cO[?25h[?0c[?25l[?1cN[?25h[?0c[?25l[?1cT[?25h[?0c[?25l[?1cR[?25h[?0c[?25l[?1cO[?25h[?0c[?25l[?1cL[?25h[?0c[?25l[?1cL[?25h[?0c[?25l[?1cE[?25h[?0c[?25l[?1cD[?25h[?0c[?25l[?1c=[?25h[?0c[?25l[?1cn[?25h[?0c[?25l[?1co[?25h[?0c[6;15H[7;13H[6;15H[?25l[?1c[7;36r[7;1H[L[1;37r[7;1H[?25h[?0c[?25l[?1cD[?25h[?0c[?25l[?1cN[?25h[?0c[?25l[?1cS[?25h[?0c[?25l[?1c1[?25h[?0c[?25l[?1c=[?25h[?0c[?25l[?1c8[?25h[?0c[?25l[?1c.[?25h[?0c[?25l[?1c8[?25h[?0c[?25l[?1c.[?25h[?0c[?25l[?1c8[?25h[?0c[?25l[?1c.[?25h[?0c[?25l[?1c8[?25h[?0c[?25l[?1c[8;36r[8;1H[L[1;37r[8;1H[?25h[?0c[?25l[?1cD[?25h[?0c[?25l[?1cN[?25h[?0c[?25l[?1cS[?25h[?0c[?25l[?1c2[?25h[?0c[?25l[?1c=[?25h[?0c[?25l[?1c4[?25h[?0c[?25l[?1c.[?25h[?0c[?25l[?1c2[?25h[?0c[?25l[?1c.[?25h[?0c[?25l[?1c2[?25h[?0c[?25l[?1c.[?25h[?0c[?25l[?1c2[?25h[?0c[37;1H[K[8;12H[?25l[?1c[?25h[?0c[?25l[?1c[37;1H:[?25h[?0cwq[?25l[?1c"/etc/sysconfig/network-scripts/ifcfg-enp0s3" 19L, 334C written[?25h[?0c
+[root@localhost admin]# vi /etc/sysconfig/network-scripts/ifcfg-enp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Pnp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Pnp0s3[1Penp0s3[1Penp0s3[1Penp0s3[1Penp0s3 enp0s3[C enp0s3[1@i[1@f[1@d[1@o[1@w[1@n[C[1Penp0s3
+[root@localhost admin]# ifdown enp0s3[C[C[C[C[C[1P enp0s3[1P enp0s3[1P enp0s3[1P enp0s3u enp0s3p enp0s3
+
+Determining IP information for enp0s3... done.
+[root@localhost admin]# vi typescript 
+[1;37r[?25h[?8c[?25h[?0c[27m[24m[0m[H[J[?25l[?1c[37;1H"typescript" [noeol] 75L, 8192C[1;1HScript started on Mon 15 Apr 2019 11:02:23 AM EDT
+[root@localhost admin]# ls -a[1m[34m^M
+^[[0m[0m[1m[34m^[[0m[01;34m.[1m[34m^[[0m[0m  [1m[34m^[[0m[01;34m..[1m[34m^[[0m[0m  .bash_logout  .bash_profile  .bashrc  typescript[1m[34m^M[0m
+[root@localhost admin]# yum install rsync[1m[34m^M[0m
+Loaded plugins: fastestmirror[1m[34m^M[0m
+Determining fastest mirrors[1m[34m^M[0m
+Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&arch=x86_64&repo=os&infra=stoc[8;1Hk error was[1m[34m^M[0m
+14: curl#6 - "Could not resolve host: mirrorlist.centos.org; Unknown error"[1m[34m^M
+^M
+^M[0m
+ One of the configured repositories failed (Unknown),[1m[34m^M[0m
+ and yum doesn't have enough cached data to continue. At this point the only[1m[34m^M[0m
+ safe thing yum can do is fail. There are a few ways to work "fix" this:[1m[34m^M
+^M[0m[16;6H1. Contact the upstream for the repository and get them to fix the problem.[1m[34m^M
+^M[0m[18;6H2. Reconfigure the baseurl/etc. for the repository, to point to a working[1m[34m^M[0m[19;9Hupstream. This is most often useful if you are using a newer[1m[34m^M[0m[20;9Hdistribution release than is supported by the repository (and the[1m[34m^M[0m[21;9Hpackages for the previous distribution release still work).[1m[34m^M
+^M[0m[23;6H3. Run the command with the repository temporarily disabled[1m[34m^M[0m[24;13Hyum --disablerepo=<repoid> ...[1m[34m^M
+^M[0m[26;6H4. Disable the repository permanently, so yum won't use it by default. Yum[1m[34m^M[0m[27;9Hwill then just ignore the repository until you permanently enable it[1m[34m^M[0m[28;9Hagain or use --enablerepo for temporary usage:[1m[34m^M
+^M[0m[30;13Hyum-config-manager --disable <repoid>[1m[34m^M[0m[31;9Hor[1m[34m^M[0m[32;13Hsubscription-manager repos --disable=<repoid>[1m[34m^M
+^M[0m[34;6H5. Configure the failing repository to be skipped, if it is unavailable.[1m[34m^M[0m[35;9HNote that yum will try to contact the repo. when it runs most commands,[1m[34m^M[0m[36;9Hso will have to try and fail each time (and thus. yum will be be much[1m[34m^M[1;1H[?25h[?0c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;9Hslower). If it is a very temporary problem though, this is often a nice[1m[34m^M[0m[37;1H[K[36;1H[?25h[?0c[?25l[?1c[1;36r[36;1H
+[1;37r[36;9Hcompromise:[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1H[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;13Hyum-config-manager --save --setopt=<repoid>.skip_if_unavailable=true[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1H[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1HCannot find a valid baseurl for repo: base/7/x86_64[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[6M[1;37r[31;1H[root@localhost admin]# vu[1m[34m^H^[[0m[Ki /etc/sys[1m[34m^G[0mconfig/netw[1m[34m^G[0mork-scripts/if[1m[34m^H^[[0m[K[1m[34m^H^[[0m[K[1m[34m^M^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[[32;1HC[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[1P[1m[34m^[[0m[1P /etc/sys[33;1Hconfig/network-scripts/[1m[34m^M^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[[34;1HC[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[Cc /etc/sysconfig/network-scripts/[1m[34m^M^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[35;1H[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[Cd /etc/sysconfig/network-scripts/[1m[34m^M^[[0m[C[1m[34m^[[0m[C[1m[34m^[36;1H[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^M[31;1H[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1H[root@localhost network-scripts]# ls -a[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1H[1m[34m^[[0m[0m[1m[34m^[[0m[01;34m.[1m[34m^[[0m[0m[13C[1m[34m^[[0m[01;32mifdown-ippp[1m[34m^[[0m[0m    [1m[34m^[[0m[01;32mifdown-Team[1m[34m^[[0m[0m      [1m[34m^[[0m[01;3[36;1H2mifup-ippp[1m[34m^[[0m[0m   [1m[34m^[[0m[01;32mifup-routes[1m[34m^[[0m[0m[7Cnetwork-functions[1m[34m^M[35;1H[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1H[1m[34m^[[0m[01;34m..[1m[34m^[[0m[0m[12C[1m[34m^[[0m[01;32mifdown-ipv6[1m[34m^[[0m[0m    [1m[34m^[[0m[01;32mifdown-TeamPort[1m[34m^[[0m[0m  [1m[34m^[[0m[01;32mifu[36;1Hp-ipv6[1m[34m^[[0m[0m   [1m[34m^[[0m[01;32mifup-sit[1m[34m^[[0m[0m[10Cnetwork-functions-ipv6[1m[34m^M[35;1H[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1Hifcfg-enp0s3  [1m[34m^[[0m[01;36mifdown-isdn[1m[34m^[[0m[0m    [1m[34m^[[0m[01;32mifdown-tunnel[1m[34m^[[0m[0m    [1m[34m^[[0m[01;36mifup-isdn[1m[34m^[[0m[0m
+[1m[34m^[[0m[01;32mifup-Team[1m[34m^[[0m[0m[1m[34m^M[35;1H[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1Hifcfg-lo      [1m[34m^[[0m[01;32mifdown-post[1m[34m^[[0m[0m    [1m[34m^[[0m[01;36mifup[1m[34m^[[0m[0m[13C[1m[34m^[[0m[01;32mifup-plip[1m[34m^[[0m[0m
+[1m[34m^[[0m[01;32mifup-TeamPort[1m[34m^[[0m[0m[1m[34m^M[35;1H[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1H[1m[34m^[[0m[01;36mifdown[1m[34m^[[0m[0m[8C[1m[34m^[[0m[01;32mifdown-ppp[1m[34m^[[0m[0m     [1m[34m^[[0m[01;32mifup-aliases[1m[34m^[[0m[0m     [1m[34m^[[0m[01;32mifu[36;1Hp-plusb[1m[34m^[[0m[0m  [1m[34m^[[0m[01;32mifup-tunnel[1m[34m^[[0m[0m[1m[34m^M[35;1H[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1H[1m[34m^[[0m[01;32mifdown-bnep[1m[34m^[[0m[0m   [1m[34m^[[0m[01;32mifdown-routes[1m[34m^[[0m[0m  [1m[34m^[[0m[01;32mifup-bnep[1m[34m^[[0m[0m[8C[1m[34m^[[0m[01;32mifu[36;1Hp-post[1m[34m^[[0m[0m   [1m[34m^[[0m[01;32mifup-wireless[1m[34m^[[0m[0m[1m[34m^M[35;1H[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1H[1m[34m^[[0m[01;32mifdown-eth[1m[34m^[[0m[0m    [1m[34m^[[0m[01;32mifdown-sit[1m[34m^[[0m[0m     [1m[34m^[[0m[01;32mifup-eth[1m[34m^[[0m[0m[9C[1m[34m^[[0m[01;32mifu[36;1Hp-ppp[1m[34m^[[0m[0m    [1m[34m^[[0m[01;32minit.ipv6-global[1m[34m^[[0m[0m[1m[34m^M[35;1H[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1H[root@localhost network-scripts]# cd /home/admin/[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[10M[1;37r[27;1H[root@localhost admin]# cd /home/admin/[1m[34m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[0m[10Pls -a[1m[34m^H^H^H^H^H[0mcd /etc/sy[28;1Hsconfig/network-scripts/[1m[34m^M^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[29;1H[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[17Pyum install rsync[1m[34m^G^G^G^G^G^G^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H[0mcd /etc/s[30;1Hysconfig/network-scripts/[1m[34m^M^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[31;1H[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[1P[1m[34m^[[0m[1P /etc/sysconfig/network-scripts/[1m[34m^M^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[32;1H[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[Cv /etc/sysconfig/network-scripts/[1m[34m^M^[[0m[33;1H[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[Ci
+/etc/sysconfig/network-scripts/[1m[34m^M^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[[35;1HC[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[[36;1HC[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[C[1m[34m^[[0m[Cifcfg-enp0s3[1m[34m^M[27;1H[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1H[1m[34m^[[0m[1;37r[1m[34m^[[0m[?25h[1m[34m^[[0m[?8c[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[27m[1m[34m^[[0m[24m[1m[34m^[[0m[0m[1m[34m^[[0m[H[1m[34m^[[0m[J[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c[1m[34m^[[0m[37;1H"/etc/sysconfig/netw[36;1Hork-scripts/ifcfg-enp0s3" 15L, 281C[1m[34m^[[0m[1;1HTYPE=Ethernet[1m[34m^M[35;1H[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1HPROXY_METHOD=none[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1HBROWSER_ONLY=no[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[6M[1;37r[31;1HBOOTPROTO=dhcp[1m[34m^M[0m
+DEFROUTE=yes[1m[34m^M[0m
+IPV4_FAILURE_FATAL=no[1m[34m^M[0m
+IPV6INIT=yes[1m[34m^M[0m
+IPV6_AUTOCONF=yes[1m[34m^M[0m
+IPV6_DEFROUTE=yes[1m[34m^M[31;1H[?25h[?0c
+
+
+
+
+[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1HIPV6_FAILURE_FATAL=no[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1HIPV6_ADDR_GEN_MODE=stable-privacy[1m[34m^M[0m
+NAME=enp0s3[1m[34m^M[35;1H[?25h[?0c
+[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1HUUID=9f38e076-c879-45ba-818a-5dbbd333702f[1m[34m^M[0m
+DEVICE=enp0s3[1m[34m^M[35;1H[?25h[?0c
+[?25l[?1c[1;36r[0m[1;1H[2M[1;37r[35;1HONBOOT=no[1m[34m^M
+^[[0m[1m[1m[34m^[[0m[34m~[1m[34m@                                                                                                   [35;1H[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[23M[1;37r[13;1H[1m[34m^[[0m[1m[1m[34m^[[0m[34m~                                                                                        [14;12H[1m[34m^[[0m[17;1H~[15;20H[1m[34m^[[0m[18;1H~[16;28H[1m[34m^[[0m[19;1H~[17;36H[1m[34m^[[0m[20;1H~[18;44H[1m[34m^[[0m[21;1H~[19;52H[1m[34m^[[0m[22;1H~[20;60H[1m[34m^[[0m[23;1H~[21;68H[1m[34m^[[0m[24;1H~[22;76H[1m[34m^[[0m[25;1H~[23;84H[1m[34m^[[0m[26;1H~[24;92H[1m[34m^[[0m[27;1H~[25;100H[1m[34m^[26;1H[[0m[28;1H~[27;8H[1m[34m^[[0m[29;1H~[28;16H[1m[34m^[[0m[30;1H~[29;24H[1m[34m^[[0m[31;1H~[30;32H[1m[34m^[[0m[32;1H~[31;40H[1m[34m^[[0m[33;1H~[32;48H[1m[34m^[[0m[34;1H~[33;56H[1m[34m^[[0m[35;1H~[34;64H[1m[34m^[[0m[36;1H~[35;72H[1m[34m^[[0m[1;1H[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[36;1H[?1c[1m[34m^[[0m[0m[1m[34m^[[0m[37;1H[1m[34m^[[0m[1m-- INSERT --[1m[34m^[[0m[0m[1m[34m^[[0m[37;13H[1m[34m^[[0m[K[1m[34m^[[0m[1;1H[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^M[13;1H[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1H[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1H[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1H[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1H[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1H[1m[34m^[[0m[5;1H[1m[34m^[[0m[4;1H[1m[34m^[[0m[3;1H[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[36;1H
+[1;37r[36;1H[1m[34m^M[?25h[?0c[?25l[?1c[1;36r[0m[1;1H[30M[1;37r[7;1H[1m[34m^[[0m[4;1H[1m[34m^[[0m[3;1H[1m[34m^[[0m[15C[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c[1m[34m^[[0m[4;36r[1m[34m^[[0m[4;1H[1m[34m^[[0m[L[1m[34m^[[0m[1;37r[1m[34m^[[0m[4;1H[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cO[1m[34m^[[0m[?25[8;1Hh[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cN[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cB[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cO[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1[9;1HcO[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cT[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c=[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cn[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?[10;1H25l[1m[34m^[[0m[?1co[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c[1m[34m^[[0m[5;36r[1m[34m^[[0m[5;1H[1m[34m^[[0m[L[1m[34m^[[0m[1;37r[1m[34m^[[0m[5;1H[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cN[1m[34m^[[0m[[11;1H?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cm[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c[1m[34m^[[0m[5;2H[1m[34m^[[0m[K[1m[34m^[[0m[5;2H[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cM[1m[34m^[[0m[?2[12;1H5h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c_[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cC[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cO[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?[13;1H1cN[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cT[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cR[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cO[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[[14;1H?25l[1m[34m^[[0m[?1cL[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cL[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cE[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cD[1m[34m^[[0m[?25h[1m[34m^[15;1H[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c=[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cn[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1co[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[6;15H[1m[34m^[[0m[7;1[16;1H3H[1m[34m^[[0m[6;15H[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c[1m[34m^[[0m[7;36r[1m[34m^[[0m[7;1H[1m[34m^[[0m[L[1m[34m^[[0m[1;37r[1m[34m^[[0m[7;1H[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cD[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[[17;1H?25l[1m[34m^[[0m[?1cN[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1cS[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c1[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c=[1m[34m^[[0m[?25h[1m[34m^[18;1H[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c8[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c.[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c8[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c.[19;1H[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c8[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c.[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25l[1m[34m^[[0m[?1c8[1m[34m^[[0m[?25h[1m[34m^[[0m[?0c[1m[34m^[[0m[?25[20;1Hl[1m[34m^[[0m[
+[1m[34m~                                                                                                   [22;1H~                                                                                                   [23;1H~                                                                                                   [24;1H~                                                                                                   [25;1H~                                                                                                   [26;1H~                                                                                                   [27;1H~                                                                                                   [28;1H~                                                                                                   [29;1H~                                                                                                   [30;1H~                                                                                                   [31;1H~                                                                                                   [32;1H~                                                                                                   [33;1H~                                                                                                   [34;1H~                                                                                                   [35;1H~                                                                                                   [36;1H~                                                                                                   [7;1H[?25h[?0c[?25l[?1c[37;1H[0m:[?25h[?0cq[?25l[?1c[?25h[?0c[37;1H[K[37;1H[root@localhost admin]# vi typescript [3Pifup enp0s3[2@down[C[C[C[C[C[C[Cvi /etc/sysconfig/network-scripts/ifcfg-enp0s3[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /home/admin/[K[10Pls -acd /etc/sysconfig/network-scripts/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pyum install rsync
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.reconn.ru
+ * extras: mirror.reconn.ru
+ * updates: mirror.reconn.ru
+base                                                                         | 3.6 kB  00:00:00     
+extras                                                                       | 3.4 kB  00:00:00     
+updates                                                                      | 3.4 kB  00:00:00     
+(2/4): base/7/x86_64/primary_db     0% [                          ]  0.0 B/s |    0 B  --:--:-- ETA (1/4): base/7/x86_64/group_gz                                                | 166 kB  00:00:00     
+(2/4): extras/7/x86_64/primary_db                                            | 187 kB  00:00:00     
+(4/4): updates/7/x86_64/primary_db  10% [==-                      ]  0.0 B/s | 1.0 MB  --:--:-- ETA (4/4): updates/7/x86_64/primary_db  25% [======                   ] 2.0 MB/s | 2.4 MB  00:00:03 ETA (3/4): base/7/x86_64/primary_db     34% [========-                ] 2.1 MB/s | 3.4 MB  00:00:03 ETA (3/4): base/7/x86_64/primary_db     47% [===========-             ] 2.2 MB/s | 4.6 MB  00:00:02 ETA (3/4): base/7/x86_64/primary_db     61% [===============          ] 2.3 MB/s | 5.9 MB  00:00:01 ETA (3/4): updates/7/x86_64/primary_db                                           | 3.4 MB  00:00:02     
+(4/4): base/7/x86_64/primary_db     74% [==================-      ] 2.4 MB/s | 7.3 MB  00:00:01 ETA (4/4): base/7/x86_64/primary_db     86% [=====================-   ] 2.5 MB/s | 8.4 MB  00:00:00 ETA (4/4): base/7/x86_64/primary_db     96% [======================== ] 2.5 MB/s | 9.4 MB  00:00:00 ETA (4/4): base/7/x86_64/primary_db                                              | 6.0 MB  00:00:03     
+Resolving Dependencies
+--> Running transaction check
+---> Package rsync.x86_64 0:3.1.2-4.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+====================================================================================================
+ Package              Arch                  Version                       Repository           Size
+====================================================================================================
+Installing:
+ rsync                x86_64                3.1.2-4.el7                   base                403 k
+
+Transaction Summary
+====================================================================================================
+Install  1 Package
+
+Total download size: 403 k
+Installed size: 815 k
+Is this ok [y/d/N]: y
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/base/packages/rsync-3.1.2-4.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Public key for rsync-3.1.2-4.el7.x86_64.rpm is not installed
+rsync-3.1.2-4.el7.x86_64.rpm                                                 | 403 kB  00:00:00     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Importing GPG key 0xF4A80EB5:
+ Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+ Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+ Package    : centos-release-7-5.1804.el7.centos.x86_64 (@anaconda)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Is this ok [y/N]: y
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : rsync-3.1.2-4.el7.x86_64 [                                                     ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [###                                                  ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [#######                                              ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [############                                         ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [################                                     ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [####################                                 ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [########################                             ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [############################                         ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [###############################                      ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [#################################                    ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [#####################################                ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [#########################################            ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [###########################################          ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [############################################         ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [#############################################        ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [##############################################       ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [###############################################      ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [################################################     ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [###################################################  ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64 [#################################################### ] 1/1  Installing : rsync-3.1.2-4.el7.x86_64                                                         1/1 
+  Verifying  : rsync-3.1.2-4.el7.x86_64                                                         1/1 
+
+Installed:
+  rsync.x86_64 0:3.1.2-4.el7                                                                        
+
+Complete!
+[root@localhost admin]# vgs
+  VG     #PV #LV #SN Attr   VSize  VFree
+  centos   1   2   0 wz--n- <7.00g    0 
+[root@localhost admin]# vgrename centos otusroot
+  Volume group "centos" successfully renamed to "otusroot"
+[root@localhost admin]# sed -i 's/centos/otusroot/g' /etc/fd[Kstab && sed -i 's/centos/otusroot/g' /et[K[Kboo t/grub2/grub,[K.v[Kcfg 
+[root@localhost admin]# vgchs[Kange -a
+vgchange: option requires an argument -- 'a'
+  Error during parsing of command line.
+[root@localhost admin]# vgchange -ay
+  2 logical volume(s) in volume group "otusroot" now active
+[root@localhost admin]# lvchange /dev/otusroot/{}b}o}o}t},}r}o}o}t},}w}[1P}s}w}r}[1P}[1P}a}p}[1P}[1P}[1P}s}w}a}p}[C  --refresh
+  Failed to find logical volume "otusroot/boot"
+[root@localhost admin]# lsl[Kblk
+NAME              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                 8:0    0    8G  0 disk 
+├─sda1              8:1    0    1G  0 part /boot
+└─sda2              8:2    0    7G  0 part 
+  ├─otusroot-root 253:0    0  6.2G  0 lvm  /
+  └─otusroot-swap 253:1    0  820M  0 lvm  [SWAP]
+sr0                11:0    1 1024M  0 rom  
+[root@localhost admin]# lsblkvchange /dev/otusroot/{boot,root,swap}  --refresh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvgchange -ay[K[Ksed -i 's/centos/otusroot/g' /etc/fstab && sed -i 's/centos/otusroot/g' /boott/grub2/grub.cfg [C[C[C[C[C[C[C[C[C[1P [1P [1P [1P [1P [1P [1P [1P [1P [1P [1P [1P [1P [1P [1P [1P [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P 
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P e t  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc  / f s tab [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C && sed -i 's/centos/otusroot/g' /etc/f[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C && sed -i 's/centos/otusroot/g' /etc/fs[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C && sed -i 's/centos/otusroot/g' /etc/fst[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C && sed -i 's/centos/otusroot/g' /etc/fsta[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C && sed -i 's/centos/otusroot/g' /etc/fstab[1P [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C && sed -i 's/centos/otusroot/g' /etc/fstab [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C && sed -i 's/centos/otusroot/g' /etc/fstab  [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@bo && sed -i 's/centos/otusroot/g' /etc/fstab  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co && sed -i 's/centos/otusroot/g' /etc/fstab  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct/ && sed -i 's/centos/otusroot/g' /etc/fstab [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg && sed -i 's/centos/otusroot/g' /etc/fst[1@a[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr && sed -i 's/centos/otusroot/g' /etc/fs[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cub && sed -i 's/centos/otusroot/g' /etc/[2@fs[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2 && sed -i 's/centos/otusroot/g' /etc[1@/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/ && sed -i 's/centos/otusroot/g' /et[1@c[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg && sed -i 's/centos/otusroot/g' /e[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr && sed -i 's/centos/otusroot/g' /[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cub && sed -i 's/centos/otusroot/g'[2@ /[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C. && sed -i 's/centos/otusroot/g[1@'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc && sed -i 's/centos/otusroot/[1@g[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfg && sed -i 's/centos/otusroo[2@t/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+[root@localhost admin]# sed -i 's/centos/otusroot/g' /boot/grub2/grub.cfg && sed -i 's/centos/otusrooot/g' /etc/fstab [A[C[C[C[C[C[C[Clsblk[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvchange /dev/otusroot/{boot,root,swap}  --refresh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvgchange -ay[K
+  2 logical volume(s) in volume group "otusroot" now active
+[root@localhost admin]# vgchange -aysed -i 's/centos/otusroot/g' /boot/grub2/grub.cfg && sed -i 's/centos/otusrooot/g' /etc/fstab [A[C[C[C[C[C[C[Clsblk[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvchange /dev/otusroot/{boot,root,swap}  --refresh
+  Failed to find logical volume "otusroot/boot"
+[root@localhost admin]# lvchange /dev/otusroot/{boot,root,swap}  --refresh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvgchange -ay[Ksed -i 's/centos/otusroot/g' /boot/grub2/grub.cfg && sed -i 's/centos/otusrooot/g' /etc/fstab [A[C[C[C[C[C[C[Clsblk[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C
