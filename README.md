@@ -103,6 +103,10 @@ You might want to save "/run/initframfs/rdsosreport.txt" to USB stick or /boot a
 
 Volume group "centos" successfully renamed to "OtusRoot"
 
+Правим конфигурационные файлы:
+
+[root@localhost ~]# sed -i 's/centos/otusroot/g' /boot/grub2/grub.cfg && sed -i 's/centos/otusroot/g' /etc/fstab
+
 **Далее правим /etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg. Везде заменяем старое название на новое.**
 
 #
@@ -269,3 +273,7 @@ test
 ...
 
 **После перезагрузки и после паузы на 10 секунд появился пингвин в выводе терминала. Результат приложен в Screenshot from 2019-04-15 06-09-07.png.**
+
+## * **Сконфигурировать систему без отдельного раздела с /boot, а только с LVM**
+
+Работа выполнена, используя script и  приложена в typescript.
