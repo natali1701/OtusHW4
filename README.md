@@ -107,55 +107,7 @@ Volume group "centos" successfully renamed to "OtusRoot"
 
 [root@localhost ~]# sed -i 's/centos/otusroot/g' /boot/grub2/grub.cfg && sed -i 's/centos/otusroot/g' /etc/fstab
 
-**Далее правим /etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg. Везде заменяем старое название на новое.**
-
-#
-
-#/etc/fstab
-
-#Created by anaconda on Sun Apr 14 03:46:55 2019
-
-#
-
-#Accessible filesystems, by reference, are maintained under '/dev/disk'
-
-#See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
-
-#
-
-/dev/mapper/OtusRoot-root /                       xfs     defaults        0 0
-
-UUID=07a6a72f-7d85-4715-a702-a0309feea76c /boot                   xfs     defaults        0 0
-
-/dev/mapper/OtusRoot-swap swap                    swap    defaults        0 0
-
-[root@localhost ~]# vi /etc/default/grub 
-
-GRUB_TIMEOUT=5
-
-GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
-
-GRUB_DEFAULT=saved
-
-GRUB_DISABLE_SUBMENU=true
-
-GRUB_TERMINAL_OUTPUT="console"
-
-GRUB_CMDLINE_LINUX="crashkernel=auto rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet"
-
-GRUB_DISABLE_RECOVERY="true"
-
-**В /boot/grub2/grub.cfg из всего править нужно только следующую строку**
-
-[root@localhost ~]# vi /boot/grub2/grub.cfg
-
-...
-        linux16 /vmlinuz-3.10.0-862.el7.x86_64 root=/dev/mapper/OtusRoot-root ro crashkernel=auto rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet quiet LANG=eng_US.UTF-8
-
-        initrd16 /initramfs-3.10.0-862.2.3.el7.x86_64.img
-...
-
-**Пересоздаем initrd image, чтобы он знал новое название Volume Group**
+*Пересоздаем initrd image, чтобы он знал новое название Volume Group**
 
 [root@localhost ~]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 
@@ -164,8 +116,6 @@ GRUB_DISABLE_RECOVERY="true"
 *** Creating image file done ***
 
 *** Creating initramfs image file '/boot/initramfs-3.10.0-862.el7.x86_64.img' done ***
-
-Более подробный результат вывода команды приложен в скриншоте Screenshot from 2019-04-15 05-07-48.png.
 
 Перезагружаемся и проверяем успешную загрузку с новым именем:
 
